@@ -1,0 +1,27 @@
+@use "sass:list";
+
+$grid-columns: 12;
+$grid-template: (
+  "col": "column",
+  "row": "row",
+);
+$gap-multiple: 4;
+
+.grid {
+  display: grid;
+  row-gap: $gap-multiple * 8;
+  column-gap: $gap-multiple * 8;
+}
+
+@each $name, $glyph in $grid-template {
+  @for $i from 1 to 12 {
+    .#{$name}-span-#{$i} {
+      grid-template-#{$glyph}s: repeat($i, 1fr);
+    }
+  }
+  @for $i from 1 to 12 {
+    .#{$name}-gap-#{$i} {
+      #{$glyph}-gap: $i * $gap-multiple;
+    }
+  }
+}
