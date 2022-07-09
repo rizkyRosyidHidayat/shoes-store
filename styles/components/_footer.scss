@@ -1,0 +1,62 @@
+@use "../utilities/variables";
+
+.footer-content {
+  color: variables.$color-white;
+  display: flex;
+  justify-content: center;
+  margin: 0px -30px 125px -30px;
+
+  &-list {
+    margin: 0px 30px;
+    .title {
+      font-weight: 600;
+      font-size: 40px;
+      margin-bottom: 24px;
+    }
+    .list {
+      li {
+        font-weight: 400;
+        font-size: 20px;
+        margin-bottom: 24px;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .list-contact {
+      width: 236px;
+      li {
+        margin-bottom: 24px;
+        .title {
+          font-weight: 600;
+          font-size: 20px;
+          margin-bottom: 8px;
+        }
+        .subtitle {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  border-top: thin solid white;
+  display: flex;
+  padding-top: 26px;
+  padding-bottom: 45px;
+  align-items: flex-end;
+  color: variables.$color-white;
+
+  .footer-sosmed {
+    margin-left: auto !important;
+    display: flex;
+    margin: 0px -12px;
+    li {
+      margin: 0px 12px;
+    }
+  }
+}

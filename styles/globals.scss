@@ -5,12 +5,18 @@
 @import './base/spacing';
 @import './base/sizing';
 @import './base/typography';
+@import './base/background';
 
 @import './utilities/mixins';
 
 @import './layout/grid-system';
 @import './layout/container';
+@import './layout/position';
 
 @import './components/button';
+@import './components/navbar';
+@import './components/footer';
+
+@import './page/home';
 
 @import './style.scss';

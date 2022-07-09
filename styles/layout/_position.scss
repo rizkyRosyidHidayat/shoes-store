@@ -1,0 +1,17 @@
+$positions: absolute, fixed, relative, static;
+$sides: top, right, bottom, left;
+$multiple: 4;
+
+@each $name in $positions {
+  .#{$name} {
+    position: #{$name}; 
+  }
+}
+
+@each $name in $sides {
+  @for $i from 0 to 40 {
+    .#{$name}-#{$i} {
+      #{$name}: $i * $multiple; 
+    }
+  }
+}

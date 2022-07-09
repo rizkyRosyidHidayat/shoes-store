@@ -1,7 +1,9 @@
+@use '../utilities/variables';
+
 $font-weights: (
   "light": 300,
   "regular": 400,
-  "medium": 500,
+  "medium": 600,
   "bold": 700,
   "extra-bold": 900,
 );
@@ -23,5 +25,20 @@ $font-size: (
 @each $name, $value in $font-size {
   .text-#{$name}{
     font-size: $value;
+    @if $name == "title" {
+      line-height: 1.5;
+    }
   }
+}
+
+$aligns: left, center, right;
+
+@each $name in $aligns {
+  .text-#{$name}{
+    text-align: $name;
+  }
+}
+
+.text-secondary {
+  color: variables.$color-secondary;
 }

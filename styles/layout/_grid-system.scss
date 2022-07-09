@@ -5,12 +5,10 @@ $grid-template: (
   "col": "column",
   "row": "row",
 );
-$gap-multiple: 4;
+$gap-multiple: 4px;
 
 .grid {
   display: grid;
-  row-gap: $gap-multiple * 8;
-  column-gap: $gap-multiple * 8;
 }
 
 @each $name, $glyph in $grid-template {

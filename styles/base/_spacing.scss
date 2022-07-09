@@ -8,7 +8,7 @@ $sides: (
 );
 
 @each $name, $glyph in $sides {
-  @for $i from 1 to 40 {
+  @for $i from 0 to 41 {
     @if $name == "" {
       .m-#{$i} {
         margin: $multiple * $i;
@@ -25,4 +25,8 @@ $sides: (
       }
     }
   }
+}
+
+.mx-auto {
+  margin: 0px auto;
 }
