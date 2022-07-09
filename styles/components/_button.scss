@@ -1,0 +1,21 @@
+@use '../utilities/variables';
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &-primary {
+    @extend .btn;
+    background-color: variables.$color-black;
+    color: variables.$color-white;
+  }
+}
+
+.btn:hover {
+  background-color: scale-color(variables.$color-black, $lightness: 10%);
+}

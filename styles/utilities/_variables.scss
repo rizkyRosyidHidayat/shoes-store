@@ -9,4 +9,8 @@ $breakpoint-2xl: 1536px;
 $color-white: #fff;
 $color-black: #252525;
 $color-body: #f9f9f9;
-$color-font-basic: $color-black;
+
+// font
+$font-color-body: $color-black;
+$font-body: 'Poppins', sans-serif;
+$font-size-body: 14px;

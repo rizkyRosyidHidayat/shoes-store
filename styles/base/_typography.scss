@@ -1,0 +1,27 @@
+$font-weights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+  "extra-bold": 900,
+);
+
+@each $name, $value in $font-weights {
+  .font-#{$name}{
+    font-weight: $value;
+  }
+}
+
+$font-size: (
+  "body-2": 14px,
+  "body-1": 16px,
+  "subheading-2": 20px,
+  "subheading-1": 24px,
+  "title": 40px,
+);
+
+@each $name, $value in $font-size {
+  .text-#{$name}{
+    font-size: $value;
+  }
+}

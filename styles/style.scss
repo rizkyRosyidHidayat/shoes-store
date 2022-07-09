@@ -1,0 +1,8 @@
+@use './utilities/variables';
+
+body {
+  font-family: variables.$font-body;
+  color: variables.$font-color-body;
+  font-size: variables.$font-size-body;
+  background-color: variables.$color-body;
+}
