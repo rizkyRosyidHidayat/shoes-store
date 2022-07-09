@@ -45,8 +45,8 @@ const Products = (props: Props) => {
       <div className="container">
         <p className="text-subheading-1 font-medium mb-7">Only For You</p>
         <div className="grid col-span-4 col-gap-7">
-          {product.map((item) => (
-            <div className="product-item">
+          {product.map((item, index) => (
+            <div key={index} className="product-item">
               <div className="product-item-img">
                 {item.favorite ? (
                   <HeartIconFull className="product-item-favorite-active"></HeartIconFull>
