@@ -1,0 +1,28 @@
+$multiple: 4px;
+$sides: (
+  "": "",
+  "t": "top",
+  "l": "left",
+  "b": "bottom",
+  "r": "right",
+);
+
+@each $name, $glyph in $sides {
+  @for $i from 1 to 12 {
+    @if $name == "" {
+      .m-#{$i} {
+        margin: $multiple * $i;
+      }
+      .p-#{$i} {
+        padding: $multiple * $i;
+      }
+    } @else {
+      .m#{$name}-#{$i} {
+        margin-#{$glyph}: $multiple * $i;
+      }
+      .p#{$name}-#{$i} {
+        padding-#{$glyph}: $multiple * $i;
+      }
+    }
+  }
+}

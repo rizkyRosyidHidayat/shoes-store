@@ -1,0 +1,21 @@
+$direction: (
+  "start": "flex-start",
+  "end": "flex-end",
+  "center": "center"
+);
+
+.flex {
+  display: flex;
+}
+
+@each $name, $glyph in $direction {
+  .justify-#{$name} {
+    justify-content: $glyph;
+  }
+}
+
+@each $name, $glyph in $direction {
+  .items-#{$name} {
+    align-items: $glyph;
+  }
+}

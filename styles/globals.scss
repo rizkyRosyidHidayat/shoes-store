@@ -1,1 +1,9 @@
-@import './utility/reset.scss';
+@import './base/reset';
+@import './base/flexbox';
+@import './base/spacing';
+@import './base/sizing';
+
+@import './utilities/mixins';
+@import './utilities/variables';
+
+@import './layout/container';

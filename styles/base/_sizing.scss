@@ -1,0 +1,32 @@
+$multiple-px: 12px;
+$multiple-percent: 5%;
+$axis: (
+  "w": "width",
+  "h": "height",
+);
+
+// sizing in viewport
+.w-viewport {
+  width: 100vw;
+}
+.h-viewport {
+  height: 100vh;
+}
+
+// sizing in pixel
+@each $name, $glyph in $axis {
+  @for $i from 1 to 12 {
+    .#{$name}-#{$i} {
+      #{$glyph}: $multiple-px * $i;
+    }
+  }
+}
+
+// sizing in precent
+@each $name, $glyph in $axis {
+  @for $i from 1 to 20 {
+    .#{$name}-pt-#{$i} {
+      #{$glyph}: $multiple-percent * $i;
+    }
+  }
+}
