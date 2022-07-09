@@ -1,7 +1,9 @@
 $direction: (
   "start": "flex-start",
   "end": "flex-end",
-  "center": "center"
+  "center": "center",
+  "between": "space-between",
+  "around": "space-around",
 );
 
 .flex {
