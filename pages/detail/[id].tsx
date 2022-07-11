@@ -12,11 +12,27 @@ import Navbar from '../../components/Navbar'
 type Props = {}
 
 const Detail: NextPage = (props: Props) => {
+  const [isScrolling, setIsScrolling] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Header></Header>
 
-      <Navbar fixed={true}></Navbar>
+      <Navbar fixed={true} hide={isScrolling}></Navbar>
 
       <Category></Category>
 
