@@ -23,9 +23,11 @@ $gap-multiple: 4px;
     }
   }
   @for $i from 1 to 12 {
-    .#{$name}s-#{$i} {
-      grid-#{$glyph}-start: 1;
-      grid-#{$glyph}-end: $i + 1;
+    .#{$name}-start-#{$i} {
+      grid-#{$glyph}-start: $i;
+    }
+    .#{$name}-end-#{$i} {
+      grid-#{$glyph}-end: $i;
     }
   }
 }

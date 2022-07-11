@@ -13,15 +13,50 @@
     color: variables.$color-black;
   }
 }
-.banner-nav-arrow {
+.banner-product {
+  overflow: hidden;
   display: flex;
   align-items: center;
-  margin: 0px -20px;
-  svg {
-    width: 24px;
-    height: 24px;
-    margin: 0px 20px;
-    cursor: pointer;
+  justify-content: center;
+  img {
+    width: 500px;
+    transform: rotate(45deg);
+    display: block;
+    margin: 0px auto;
+  }
+  .detail {
+    visibility: hidden;
+  }
+
+  &-active {
+    img {
+      transition: all 0.5s ease-in-out;
+      width: 250px;
+      transform: none;
+      display: block;
+      margin: 0px auto;
+    }
+
+    .detail {
+      visibility: visible;
+      text-align: center;
+      margin-top: 40px;
+      transition: all 0.5s ease-in-out;
+
+      .category {
+        display: flex;
+        justify-content: center;
+        li {
+          cursor: pointer;
+          transition: all 0.1s ease-in-out;
+          color: #fff;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 }
 
