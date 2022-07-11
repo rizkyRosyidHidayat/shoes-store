@@ -42,4 +42,8 @@
   &-dense {
     padding: 16px 0px;
   }
+
+  &-hide {
+    transform: translateY(-100%);
+  }
 }
