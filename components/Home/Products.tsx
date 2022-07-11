@@ -44,7 +44,7 @@ const Products = (props: Props) => {
     <section className="mt-40">
       <div className="container">
         <p className="text-subheading-1 font-medium mb-7">Only For You</p>
-        <div className="grid col-span-4 col-gap-7">
+        <div className="grid col-span-4 col-gap-3">
           {product.map((item, index) => (
             <div key={index} className="product-item">
               <div className="product-item-img">
