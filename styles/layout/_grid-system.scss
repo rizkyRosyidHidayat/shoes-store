@@ -22,4 +22,10 @@ $gap-multiple: 4px;
       #{$glyph}-gap: $i * $gap-multiple;
     }
   }
+  @for $i from 1 to 12 {
+    .#{$name}s-#{$i} {
+      grid-#{$glyph}-start: 1;
+      grid-#{$glyph}-end: $i + 1;
+    }
+  }
 }
