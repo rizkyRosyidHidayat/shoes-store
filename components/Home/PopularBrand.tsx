@@ -12,7 +12,7 @@ const PopularBrand = (props: Props) => {
     <section className="mt-40">
       <div className="container">
         <p className="text-subheading-1 font-medium mb-7">Popular Brand</p>
-        <div className="grid col-span-3 col-gap-7">
+        <div className="grid col-span-3 col-gap-3">
           {brands.map((item) => (
             <div key={item.title} className="popular-brand">
               <img src={item.bg} alt={item.title} className="w-full popular-brand-bg" />
