@@ -2,7 +2,10 @@ import React from "react";
 import { ShoppingBagIcon } from "@heroicons/react/solid";
 import LogoIcon from "./LogoIcon";
 
-type Props = {};
+type Props = {
+  fixed?: boolean;
+  hide?: boolean;
+};
 
 const Navbar = (props: Props) => {
   const [isScrolling, setIsScrolling] = React.useState(false);
@@ -24,8 +27,10 @@ const Navbar = (props: Props) => {
   return (
     <header
       className={`navbar ${
-        isScrolling ? "navbar-light navbar-dense" : "navbar-transparent"
-      }`}
+        isScrolling || props.fixed
+          ? "navbar-light navbar-dense"
+          : "navbar-transparent"
+      }${props.hide ? " navbar-hide" : ""}`}
     >
       <div className="container">
         <div className="flex justify-between items-center">
@@ -33,7 +38,7 @@ const Navbar = (props: Props) => {
             <LogoIcon
               width="44"
               height="15"
-              fill={isScrolling ? "black" : "white"}
+              fill={isScrolling || props.fixed ? "black" : "white"}
             ></LogoIcon>
             {/* <img src="/logo.svg" alt="logo" /> */}
           </a>
