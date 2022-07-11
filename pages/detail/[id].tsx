@@ -38,7 +38,7 @@ const Detail: NextPage = (props: Props) => {
 
       <div className="container">
         <div className="grid col-span-3 col-gap-3 mt-10">
-          <div className='cols-2'>
+          <div className='col-start-1 col-end-3'>
             <PhotoProduct></PhotoProduct>
             <DescProduct></DescProduct>
           </div>
