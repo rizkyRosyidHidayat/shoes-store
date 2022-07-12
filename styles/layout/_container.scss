@@ -1,0 +1,24 @@
+@use '../utilities/mixins';
+@use '../utilities/variables';
+
+.container {
+  width: 100%;
+  margin: 0px auto;
+  padding: 0px 16px;
+
+  @include mixins.sm {
+    max-width: variables.$breakpoint-sm;
+  }
+  @include mixins.md {
+    max-width: variables.$breakpoint-md;
+  }
+  @include mixins.lg {
+    max-width: variables.$breakpoint-lg;
+  }
+  @include mixins.xl {
+    max-width: variables.$breakpoint-xl;
+  }
+  @include mixins.xxl {
+    max-width: variables.$breakpoint-2xl;
+  }
+}

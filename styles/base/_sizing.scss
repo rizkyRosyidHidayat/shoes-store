@@ -1,0 +1,26 @@
+$multiple-px: 12px;
+$multiple-percent: 2.5%;
+$directions: (
+  "w": "width",
+  "h": "height",
+);
+
+// sizing in viewport
+.w-viewport {
+  width: 100vw;
+}
+.h-viewport {
+  height: 100vh;
+}
+
+@each $name, $value in $directions {
+  @for $i from 0 to 40 {
+    .#{$name}-#{$i} {
+      #{$value}: $multiple-px * $i;
+    } 
+  }
+}
+
+.w-full {
+  width: 100%;
+}

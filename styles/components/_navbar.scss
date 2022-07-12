@@ -1,0 +1,49 @@
+@use '../utilities/variables';
+
+@mixin nav ($text-color) {
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+    }
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 999;
+  padding: 28px 0px;
+  transition: all 0.2s ease-in-out;
+
+  &-light {
+    background-color: variables.$color-white;
+    color: variables.$color-black;
+    @include nav(variables.$color-black)
+  }
+
+  &-dark {
+    background-color: variables.$color-black;
+    color: variables.$color-white;
+    @include nav(variables.$color-white)
+  }
+
+  &-transparent {
+    background-color: transparent;
+    color: variables.$color-white;
+    @include nav(variables.$color-white)
+  }
+
+  &-dense {
+    padding: 16px 0px;
+  }
+
+  &-hide {
+    transform: translateY(-100%);
+  }
+}
