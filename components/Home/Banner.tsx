@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/solid";
+import { gsap } from "gsap";
 
 type Props = {};
 
@@ -49,80 +49,63 @@ const Banner = (props: Props) => {
     },
   ]);
 
-  const getIndexActive = product.findIndex((item) => item.active === true);
-
-  const setColLength = (index_active: number) => {
-    let result: { start: number; end: number }[] = [];
-    product.map((item, index) => {
-      let div = Math.floor(9 / 4);
-      if (item.active) {
-        div++;
-      }
-
-      let start = index + (index + 1);
-      if (index_active > -1 && index > index_active) {
-        start++;
-      }
-
-      let end = start + div;
-      result[index] = {
-        start: start,
-        end: end,
-      };
-    });
-
-    return result;
-  };
+  const refProduct = React.useRef<Array<HTMLDivElement | null>>([]);
+  const refProductImg = React.useRef<Array<HTMLImageElement | null>>([]);
+  const refProductDetail = React.useRef<Array<HTMLDivElement | null>>([]);
+  const [onMouseOver, setOnMouseOver] = React.useState<gsap.core.Timeline[]>(
+    []
+  );
 
   React.useEffect(() => {
-    const getIndexActive = product.findIndex((item) => item.active === true);
-    setColLength(getIndexActive);
-  }, [product]);
-
-  const handleMouseOver = (i: number) =>
-    setProduct(
-      product.map((item, index) => {
-        if (i === index) {
-          item.active = true;
-        } else {
-          item.active = false;
-        }
-
-        return item;
+    const image = refProductImg.current
+    const detail = refProductDetail.current
+    const mouseOver = refProduct.current.map((item, index) => {
+      const tl = gsap.timeline({
+        paused: true,
+      });
+      tl.to(item, {
+        css: { width: '200%' },
+        duration: 0.3,
       })
-    );
-  const handleMouseLeave = () =>
-    setProduct(
-      product.map((item) => {
-        item.active = false;
-
-        return item;
+      .to(image[index], {
+        css: { width: 250, transform: 'rotate(0deg)' },
+        duration: 0.5,
       })
-    );
+      .to(detail[index], {
+        autoAlpha: 1,
+        duration: 0.3,
+      })
+      return tl;
+    });
+    setOnMouseOver(mouseOver);
+  }, []);
 
   return (
     <section className="w-full relative">
-      <div
-        className={`grid ${
-          getIndexActive > -1 ? "col-span-9" : "col-span-8"
-        } w-full h-viewport`}
-      >
+      <div className={`flex h-viewport`}>
         {product.map((item, index) => (
           <div
             key={item.img}
-            className={`banner-product ${
-              item.active ? "banner-product-active" : ""
-            } col-start-${setColLength(getIndexActive)[index].start} col-end-${
-              setColLength(getIndexActive)[index].end
-            }`}
+            ref={(el) => (refProduct.current[index] = el)}
+            className={`banner-product`}
             style={{ backgroundColor: item.color }}
-            onMouseOver={() => handleMouseOver(index)}
-            onMouseLeave={() => handleMouseLeave()}
+            onMouseOver={() => {
+              if (onMouseOver) {
+                onMouseOver[index].play();
+              }
+            }}
+            onMouseLeave={() => {
+              if (onMouseOver) {
+                onMouseOver[index].reverse();
+              }
+            }}
           >
             <div>
-              <img src={item.img} alt={item.title} />
-              <div className="detail">
-                <p className="font-medium text-title text-white">{item.title}</p>
+              <img ref={(el) => (refProductImg.current[index] = el)} src={item.img} alt={item.title} />
+              <div ref={(el) => (refProductDetail.current[index] = el)} className="detail">
+                <p className="font-medium text-title text-white">
+                  {item.title}
+                </p>
                 <ul className="category mt-3">
                   {item.category.map((li) => (
                     <li key={li} className="text-body-1 mt-1 font-light mr-1">
