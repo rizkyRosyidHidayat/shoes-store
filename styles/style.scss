@@ -6,3 +6,7 @@ body {
   font-size: variables.$font-size-body;
   background-color: variables.$color-body;
 }
+
+.cursor-pointer {
+  cursor: pointer !important;
+}

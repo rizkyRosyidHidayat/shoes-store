@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Banner from "../components/Home/Banner";
@@ -17,10 +18,10 @@ const Home: NextPage = () => {
 
       <Banner></Banner>
 
-      <section className="mt-40">
-        <p className="text-title font-medium text-center">
+      <section className="mt-10 mt-md-20 mt-lg-40">
+        <p className="text-sm-subheading-1 text-md-title font-medium text-center">
           Shoes Master House <br />
-          100% Original
+          100% Original {process.env.NEXT_PUBLIC_BASE_URL}
         </p>
         <p className="text-center mt-7">
           Find your best shoes with many choices from famous brands and of
@@ -35,8 +36,8 @@ const Home: NextPage = () => {
 
       <PopularBrand></PopularBrand>
 
-      <section className="mt-40">
-        <p className="text-title font-medium text-center">Promo Available</p>
+      <section className="mt-10 mt-md-20 mt-lg-40">
+        <p className="text-sm-subheading-1 text-md-title font-medium text-center">Promo Available</p>
         <p className="text-center mt-7">
           Hurry up and buy it before it runs out and it's too late
         </p>

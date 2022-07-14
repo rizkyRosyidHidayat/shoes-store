@@ -1,14 +1,15 @@
 import React from 'react'
 
-type Props = {}
+type Props = {
+  photos: string[]
+}
 
 const PhotoProduct = (props: Props) => {
-  const photos = [1,2,3,4,5]
   return (
-    <div className='grid col-span-2 col-gap-3 row-gap-3'>
-      {photos.map(item => (
-        <div key={item}>
-          <img src="/img-detail.png" alt="product" className='w-full' />
+    <div className='grid col-span-md-1 col-span-lg-2 col-gap-3 row-gap-3'>
+      {props.photos.map((item, index) => (
+        <div key={index}>
+          <img src={item} alt="product" className='w-full' />
         </div>
       ))}
     </div>

@@ -1,13 +1,14 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  categories: string[]
+};
 
 const Category = (props: Props) => {
-  const categories = ["Nike", "Running", "Men", "Air Jordan"];
   return (
     <div className="container">
       <ul className="detail-list-category mt-24">
-        {categories.map((item) => (
+        {props.categories.map((item) => (
           <li key={item} className="text-body-1 text-secondary">
             {item}
           </li>
