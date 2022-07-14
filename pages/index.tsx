@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Banner from "../components/Home/Banner";
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
       <section className="mt-40">
         <p className="text-title font-medium text-center">
           Shoes Master House <br />
-          100% Original
+          100% Original {process.env.NEXT_PUBLIC_BASE_URL}
         </p>
         <p className="text-center mt-7">
           Find your best shoes with many choices from famous brands and of

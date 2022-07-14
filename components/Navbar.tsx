@@ -1,6 +1,7 @@
 import React from "react";
 import { ShoppingBagIcon } from "@heroicons/react/solid";
 import LogoIcon from "./LogoIcon";
+import Link from "next/link";
 
 type Props = {
   fixed?: boolean;
@@ -34,14 +35,15 @@ const Navbar = (props: Props) => {
     >
       <div className="container">
         <div className="flex justify-between items-center">
-          <a href="">
-            <LogoIcon
-              width="44"
-              height="15"
-              fill={isScrolling || props.fixed ? "black" : "white"}
-            ></LogoIcon>
-            {/* <img src="/logo.svg" alt="logo" /> */}
-          </a>
+          <Link href="/">
+            <div className="cursor-pointer">
+              <LogoIcon
+                width="44"
+                height="15"
+                fill={isScrolling || props.fixed ? "black" : "white"}
+              ></LogoIcon>
+            </div>
+          </Link>
           <nav className="navbar-nav">
             <div className="mr-8">
               <a href="">Contact</a>
