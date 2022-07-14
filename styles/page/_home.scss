@@ -19,6 +19,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  cursor: pointer;
 
   img {
     width: 500px;
@@ -29,7 +30,7 @@
   .detail {
     opacity: 0;
     text-align: center;
-    margin-top: 40px;
+    margin: 40px auto 0px auto;
     position: relative;
 
     .category {
@@ -135,16 +136,10 @@
 .product-item {
   cursor: pointer;
   &-img {
-    height: 180px;
-    background-color: variables.$color-white;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-
-    img {
-      width: 80%;
-    }
   }
 
   &-favorite {
