@@ -38,7 +38,7 @@ const Footer = (props: Props) => {
   ];
   const sosmed = ['facebook', 'twitter', 'instagram']
   return (
-    <footer className="mt-40 bg-black pt-14">
+    <footer className="mt-10 mt-md-20 mt-lg-40 bg-black pt-14">
       <div className="container">
         <div className="footer-content">
           <div className="footer-content-list">

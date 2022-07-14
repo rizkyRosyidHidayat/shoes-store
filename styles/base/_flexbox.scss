@@ -1,3 +1,5 @@
+@use '../utilities/mixins';
+
 $direction: (
   "start": flex-start,
   "end": flex-end,
@@ -8,6 +10,32 @@ $direction: (
 
 .flex {
   display: flex;
+}
+
+@include mixins.sm {
+  .flex-sm {
+    display: flex;
+  }
+}
+@include mixins.md {
+  .flex-md {
+    display: flex;
+  }
+}
+@include mixins.lg {
+  .flex-lg {
+    display: flex;
+  }
+}
+@include mixins.xl {
+  .flex-xl {
+    display: flex;
+  }
+}
+@include mixins.xxl {
+  .flex-xxl {
+    display: flex;
+  }
 }
 
 @each $name, $glyph in $direction {

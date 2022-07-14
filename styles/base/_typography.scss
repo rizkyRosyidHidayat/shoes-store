@@ -1,4 +1,5 @@
 @use '../utilities/variables';
+@use '../utilities/mixins';
 
 $font-weights: (
   "light": 300,
@@ -29,6 +30,31 @@ $font-size: (
       line-height: 1.5;
     }
   }
+  @include mixins.sm {
+    .text-sm-#{$name} {
+      font-size: $value;
+    }
+  }
+  @include mixins.md {
+    .text-md-#{$name} {
+      font-size: $value;
+    }
+  }
+  @include mixins.lg {
+    .text-lg-#{$name} {
+      font-size: $value;
+    }
+  }
+  @include mixins.xl {
+    .text-xl-#{$name} {
+      font-size: $value;
+    }
+  }
+  @include mixins.xxl {
+    .text-xxl-#{$name} {
+      font-size: $value;
+    }
+  }
 }
 
 $aligns: left, center, right;
@@ -36,6 +62,31 @@ $aligns: left, center, right;
 @each $name in $aligns {
   .text-#{$name}{
     text-align: $name;
+  }
+  @include mixins.sm {
+    .text-sm-#{$name} {
+      text-align: $name;
+    }
+  }
+  @include mixins.md {
+    .text-md-#{$name} {
+      text-align: $name;
+    }
+  }
+  @include mixins.lg {
+    .text-md-#{$name} {
+      text-align: $name;
+    }
+  }
+  @include mixins.xl {
+    .text-xl-#{$name} {
+      text-align: $name;
+    }
+  }
+  @include mixins.xxl {
+    .text-xxl-#{$name} {
+      text-align: $name;
+    }
   }
 }
 

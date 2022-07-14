@@ -13,10 +13,10 @@ const Products = (props: Props) => {
   const router = useRouter()
   
   return (
-    <section className="mt-40">
+    <section className="mt-10 mt-md-20 mt-lg-40">
       <div className="container">
         <p className="text-subheading-1 font-medium mb-7">Only For You</p>
-        <div className="grid col-span-4 col-gap-3">
+        <div className="grid col-span-md-2 col-span-lg-4 col-gap-3 row-gap-6">
           {data === undefined || isLoading ? <></> : data.map((item, index) => (
             <div key={index} className="product-item" onClick={() => router.push(`/detail/${item.id}`)}>
               <div className="product-item-img">
@@ -25,7 +25,7 @@ const Products = (props: Props) => {
                 ) : (
                   <HeartIcon className="product-item-favorite"></HeartIcon>
                 )}
-                <img src={item.images.card} alt={item.name} />
+                <img src={item.images.card} alt={item.name} className="w-full" />
               </div>
               <p className="font-medium text-subheading-2 mt-6">{item.name}</p>
               <ul className="category">

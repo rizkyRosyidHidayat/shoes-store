@@ -1,4 +1,5 @@
 @use "sass:list";
+@use '../utilities/mixins';
 
 $grid-columns: 12;
 $grid-template: (
@@ -11,23 +12,116 @@ $gap-multiple: 4px;
   display: grid;
 }
 
+@include mixins.sm {
+  .grid-sm {
+    display: grid;
+  }
+}
+@include mixins.md {
+  .grid-md {
+    display: grid;
+  }
+}
+@include mixins.lg {
+  .grid-lg {
+    display: grid;
+  }
+}
+@include mixins.xl {
+  .grid-xl {
+    display: grid;
+  }
+}
+@include mixins.xxl {
+  .grid-xxl {
+    display: grid;
+  }
+}
+
 @each $name, $glyph in $grid-template {
   @for $i from 1 to 12 {
     .#{$name}-span-#{$i} {
       grid-template-#{$glyph}s: repeat($i, 1fr);
     }
-  }
-  @for $i from 1 to 12 {
     .#{$name}-gap-#{$i} {
       #{$glyph}-gap: $i * $gap-multiple;
     }
-  }
-  @for $i from 1 to 12 {
     .#{$name}-start-#{$i} {
       grid-#{$glyph}-start: $i;
     }
     .#{$name}-end-#{$i} {
       grid-#{$glyph}-end: $i;
+    }
+
+    @include mixins.sm {
+      .#{$name}-span-sm-#{$i} {
+        grid-template-#{$glyph}s: repeat($i, 1fr);
+      }
+      .#{$name}-gap-sm-#{$i} {
+        #{$glyph}-gap: $i * $gap-multiple;
+      }
+      .#{$name}-start-sm-#{$i} {
+        grid-#{$glyph}-start: $i;
+      }
+      .#{$name}-end-sm-#{$i} {
+        grid-#{$glyph}-end: $i;
+      }
+    }
+    @include mixins.md {
+      .#{$name}-span-md-#{$i} {
+        grid-template-#{$glyph}s: repeat($i, 1fr);
+      }
+      .#{$name}-gap-md-#{$i} {
+        #{$glyph}-gap: $i * $gap-multiple;
+      }
+      .#{$name}-start-md-#{$i} {
+        grid-#{$glyph}-start: $i;
+      }
+      .#{$name}-end-md-#{$i} {
+        grid-#{$glyph}-end: $i;
+      }
+    }
+    @include mixins.lg {
+      .#{$name}-span-lg-#{$i} {
+        grid-template-#{$glyph}s: repeat($i, 1fr);
+      }
+      .#{$name}-gap-lg-#{$i} {
+        #{$glyph}-gap: $i * $gap-multiple;
+      }
+      .#{$name}-start-lg-#{$i} {
+        grid-#{$glyph}-start: $i;
+      }
+      .#{$name}-end-lg-#{$i} {
+        grid-#{$glyph}-end: $i;
+      }
+    }
+    @include mixins.xl {
+      .#{$name}-span-xl-#{$i} {
+        grid-template-#{$glyph}s: repeat($i, 1fr);
+      }
+      .#{$name}-gap-xl-#{$i} {
+        #{$glyph}-gap: $i * $gap-multiple;
+      }
+      .#{$name}-start-xl-#{$i} {
+        grid-#{$glyph}-start: $i;
+      }
+      .#{$name}-end-xl-#{$i} {
+        grid-#{$glyph}-end: $i;
+      }
+    }
+    @include mixins.xxl {
+      .#{$name}-span-xxl-#{$i} {
+        grid-template-#{$glyph}s: repeat($i, 1fr);
+      }
+      .#{$name}-gap-xxl-#{$i} {
+        #{$glyph}-gap: $i * $gap-multiple;
+      }
+      .#{$name}-start-xxl-#{$i} {
+        grid-#{$glyph}-start: $i;
+      }
+      .#{$name}-end-xxl-#{$i} {
+        grid-#{$glyph}-end: $i;
+      }
     }
   }
 }

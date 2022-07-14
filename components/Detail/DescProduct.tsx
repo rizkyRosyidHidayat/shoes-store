@@ -12,7 +12,7 @@ const DescProduct = (props: Props) => {
       <p>
         {props.detail.description}
       </p>
-      <div className="grid col-span-2 col-gap-3 mt-8">
+      <div className="grid col-span-lg-2 col-gap-3 row-gap-8 mt-8">
         <div>
           <p className="text-subheading-2 font-medium mb-3">Feature</p>
           <p>

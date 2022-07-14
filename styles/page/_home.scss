@@ -1,4 +1,5 @@
 @use "../utilities/variables";
+@use "../utilities/mixins";
 
 .banner-nav-brand {
   display: flex;
@@ -20,6 +21,27 @@
   justify-content: center;
   width: 100%;
   cursor: pointer;
+
+  &:nth-child(3){
+    display: none;
+
+    @include mixins.md {
+      display: flex;
+    }
+    @include mixins.lg {
+      display: flex;
+    }
+  }
+  &:nth-child(4){
+    display: none;
+
+    @include mixins.md {
+      display: none;
+    }
+    @include mixins.lg {
+      display: flex;
+    }
+  }
 
   img {
     width: 500px;
@@ -74,6 +96,14 @@
       &:hover {
         background-color: variables.$color-black;
       }
+      @include mixins.md {
+        font-size: 20px;
+        padding: 15px 25px;
+      }
+      @include mixins.lg {
+        font-size: 24px;
+        padding: 20px 30px;
+      }
     }
   }
 }
@@ -113,13 +143,16 @@
     height: 100%;
     width: 256px;
     top: 0px;
-    left: 56px;
+    left: 16px;
     display: flex;
     align-items: center;
 
+    @include mixins.md {
+      left: 56px;
+    }
+
     &-title {
       font-weight: 800;
-      font-size: 48px;
       line-height: 1.2;
     }
   }

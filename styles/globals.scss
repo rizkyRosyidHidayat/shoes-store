@@ -1,5 +1,8 @@
 @import './vendor/fonts';
 
+@import './page/home';
+@import './page/detail';
+
 @import './base/reset';
 @import './base/flexbox';
 @import './base/spacing';
@@ -17,7 +20,5 @@
 @import './components/navbar';
 @import './components/footer';
 
-@import './page/home';
-@import './page/detail';
 
 @import './style.scss';

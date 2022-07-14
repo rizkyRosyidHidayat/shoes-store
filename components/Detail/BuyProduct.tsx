@@ -35,7 +35,7 @@ const BuyProduct = (props: Props) => {
       <p className="text-secondary mt-5">Sizes</p>
       <div className="grid col-span-6 col-gap-2 row-gap-2 mt-2">
         {props.detail.sizes.map((item) => (
-          <div key={item} className="size">
+          <div key={item} className="size text-center">
             {item}
           </div>
         ))}

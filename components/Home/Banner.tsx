@@ -76,9 +76,9 @@ const Banner = (props: Props) => {
                   />
                   <div
                     ref={(el) => (refProductDetail.current[index] = el)}
-                    className="detail"
+                    className="detail p-3"
                   >
-                    <p className="font-medium text-title text-white">
+                    <p className="font-medium text-md-subheading-1 text-lg-title text-white">
                       {item.name}
                     </p>
                     <ul className="category mt-3">

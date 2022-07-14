@@ -1,3 +1,5 @@
+@use '../utilities/mixins';
+
 $multiple: 4px;
 $sides: (
   "": "",
@@ -16,12 +18,92 @@ $sides: (
       .p-#{$i} {
         padding: $multiple * $i;
       }
+      @include mixins.sm {
+        .m-sm-#{$i} {
+          margin: $multiple * $i;
+        }
+        .p-sm-#{$i} {
+          padding: $multiple * $i;
+        }
+      }
+      @include mixins.md {
+        .m-md-#{$i} {
+          margin: $multiple * $i;
+        }
+        .p-md-#{$i} {
+          padding: $multiple * $i;
+        }
+      }
+      @include mixins.lg {
+        .m-lg-#{$i} {
+          margin: $multiple * $i;
+        }
+        .p-lg-#{$i} {
+          padding: $multiple * $i;
+        }
+      }
+      @include mixins.xl {
+        .m-xl-#{$i} {
+          margin: $multiple * $i;
+        }
+        .p-xl-#{$i} {
+          padding: $multiple * $i;
+        }
+      }
+      @include mixins.xxl {
+        .m-xxl-#{$i} {
+          margin: $multiple * $i;
+        }
+        .p-xxl-#{$i} {
+          padding: $multiple * $i;
+        }
+      }
     } @else {
       .m#{$name}-#{$i} {
         margin-#{$glyph}: $multiple * $i;
       }
       .p#{$name}-#{$i} {
         padding-#{$glyph}: $multiple * $i;
+      }
+      @include mixins.sm {
+        .m#{$name}-sm-#{$i} {
+          margin-#{$glyph}: $multiple * $i;
+        }
+        .p#{$name}-sm-#{$i} {
+          padding-#{$glyph}: $multiple * $i;
+        }
+      }
+      @include mixins.md {
+        .m#{$name}-md-#{$i} {
+          margin-#{$glyph}: $multiple * $i;
+        }
+        .p#{$name}-md-#{$i} {
+          padding-#{$glyph}: $multiple * $i;
+        }
+      }
+      @include mixins.lg {
+        .m#{$name}-lg-#{$i} {
+          margin-#{$glyph}: $multiple * $i;
+        }
+        .p#{$name}-md-#{$i} {
+          padding-#{$glyph}: $multiple * $i;
+        }
+      }
+      @include mixins.xl {
+        .m#{$name}-xl-#{$i} {
+          margin-#{$glyph}: $multiple * $i;
+        }
+        .p#{$name}-xl-#{$i} {
+          padding-#{$glyph}: $multiple * $i;
+        }
+      }
+      @include mixins.xxl {
+        .m#{$name}-xxl-#{$i} {
+          margin-#{$glyph}: $multiple * $i;
+        }
+        .p#{$name}-xxl-#{$i} {
+          padding-#{$glyph}: $multiple * $i;
+        }
       }
     }
   }

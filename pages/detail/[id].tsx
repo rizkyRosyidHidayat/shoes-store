@@ -60,12 +60,12 @@ const Detail: NextPage = (props: Props) => {
       <Category categories={data.categories}></Category>
 
       <div className="container">
-        <div className="grid col-span-3 col-gap-3 mt-10">
-          <div className='col-start-1 col-end-3'>
+        <div className="grid col-span-1 col-span-md-2 col-span-lg-3 col-gap-3 mt-10">
+          <div className='col-start-lg-1 col-end-lg-3'>
             <PhotoProduct photos={data.images.details}></PhotoProduct>
             <DescProduct detail={data}></DescProduct>
           </div>
-          <div className='col-start-3 col-end-4'>
+          <div className='col-start-lg-3 col-end-lg-4'>
             <BuyProduct detail={data}></BuyProduct>
           </div>
         </div>
