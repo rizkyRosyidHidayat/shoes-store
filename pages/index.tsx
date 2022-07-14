@@ -39,7 +39,7 @@ const Home: NextPage = () => {
       <section className="mt-10 mt-md-20 mt-lg-40">
         <p className="text-sm-subheading-1 text-md-title font-medium text-center">Promo Available</p>
         <p className="text-center mt-7">
-          Hurry up and buy it before it runs out and it's too late
+          Hurry up and buy it before it runs out and it{`'`}s too late
         </p>
       </section>
 
